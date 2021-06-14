@@ -49,7 +49,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -117,6 +117,11 @@ source $ZSH/oh-my-zsh.sh
 ######colorscript######
 #colorscript random
 
+# Text correction
+setopt correct
+export SPROMPT="Correct %R to %r? [Yes, No, Edit]"
+autoload U colors && colors
+
 #### Aliases
 alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
@@ -142,7 +147,7 @@ alias rm='rm -i -rf'
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias nvim='/mnt/sda3/Applications/nvim.appimage' # run nvim (appimage)
+alias vim='/mnt/sda3/Applications/nvim.appimage' #run nvim (appimage)
 alias cat='bat --theme Dracula --italic-text always' # run cat -> bat with arguments
 
 ### BASH INSULTER ###

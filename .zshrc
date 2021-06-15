@@ -147,8 +147,8 @@ alias rm='rm -i -rf'
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias vim='/mnt/sda3/Applications/nvim.appimage' #run nvim (appimage)
 alias cat='bat --theme Dracula --italic-text always' # run cat -> bat with arguments
+alias vim='nvim' # rum neovim as vim
 
 ### BASH INSULTER ###
 #if [ -f /etc/bash.command-not-found ]; then

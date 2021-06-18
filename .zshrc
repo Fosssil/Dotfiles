@@ -150,6 +150,7 @@ alias free='free -m'                      # show sizes in MB
 alias cat='bat --theme Dracula --italic-text always' # run cat -> bat with arguments
 alias vim='nvim' # rum neovim as vim
 
+neofetch
 ### BASH INSULTER ###
 #if [ -f /etc/bash.command-not-found ]; then
 #    . /etc/bash.command-not-found

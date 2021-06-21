@@ -126,6 +126,7 @@ autoload U colors && colors
 alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' # update grub shorthand
+alias p10kup='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull' # to update powerlevel10k
 
 # Changing "ls" to "exa"
 alias ll='exa -al --color=always --group-directories-first' # my preferred listing
@@ -150,7 +151,7 @@ alias free='free -m'                      # show sizes in MB
 alias cat='bat --theme Dracula --italic-text always' # run cat -> bat with arguments
 alias vim='nvim' # rum neovim as vim
 
-neofetch
+# neofetch
 ### BASH INSULTER ###
 #if [ -f /etc/bash.command-not-found ]; then
 #    . /etc/bash.command-not-found

@@ -120,7 +120,7 @@ source $ZSH/oh-my-zsh.sh
 # Text correction
 setopt correct
 export SPROMPT="Correct %R to %r? [Yes, No, Edit]"
-autoload U colors && colors
+# autoload U colors && colors
 
 #### Aliases
 alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
@@ -150,6 +150,7 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias cat='bat --theme Dracula --italic-text always' # run cat -> bat with arguments
 alias vim='nvim' # rum neovim as vim
+alias ping='prettyping' # making ping beautiful
 
 # neofetch
 ### BASH INSULTER ###

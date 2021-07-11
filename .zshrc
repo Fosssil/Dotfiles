@@ -151,6 +151,7 @@ alias free='free -m'                      # show sizes in MB
 alias cat='bat --theme Dracula --italic-text always' # run cat -> bat with arguments
 alias vim='nvim' # rum neovim as vim
 alias ping='prettyping' # making ping beautiful
+alias cmatrix='cxxmatrix' #advance cmatrix
 
 # neofetch
 ### BASH INSULTER ###

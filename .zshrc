@@ -37,7 +37,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+ export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -52,7 +52,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
  ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+ COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -65,7 +65,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+ HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -77,13 +77,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
         zsh-interactive-cd
-# 	thefuck
 	fzf
 	colored-man-pages
 	colorize
 	command-not-found
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+#	rand-quote
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -146,14 +146,15 @@ alias mv='mv -i'
 alias rm='rm -i -rf'
 
 # adding flags
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias cat='bat --theme Dracula --italic-text always' # run cat -> bat with arguments
-alias vim='nvim' # rum neovim as vim
-alias ping='prettyping' # making ping beautiful
-alias cmatrix='cxxmatrix' #advance cmatrix
+alias df='df -h'                          		# human-readable sizes
+alias free='free -m'                      		# show sizes in MB
+alias cat='bat --theme Dracula --italic-text always'    # run cat -> bat with arguments
+alias vim='nvim' 					# rum neovim as vim
+alias ping='prettyping' 				# making ping beautiful
+alias cmatrix='cxxmatrix' 				# advance cmatrix
+alias srn='shutdown -r now' 				# reboot 
 
-# neofetch
+# quote
 ### BASH INSULTER ###
 #if [ -f /etc/bash.command-not-found ]; then
 #    . /etc/bash.command-not-found

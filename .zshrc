@@ -123,16 +123,16 @@ export SPROMPT="Correct %R to %r? [Yes, No, Edit]"
 # autoload U colors && colors
 
 #### Aliases
-alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' # update grub shorthand
-alias p10kup='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull' # to update powerlevel10k
+alias unlock="sudo rm /var/lib/pacman/db.lck"    					# remove pacman lock
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' 					# remove orphaned packages
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' 				# update grub shorthand
+alias p10kup='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull'  # to update powerlevel10k
 
 # Changing "ls" to "exa"
-alias ll='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ls='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias ll='exa -al --color=always --group-directories-first' 		# my preferred listing
+alias la='exa -a --color=always --group-directories-first'  		# all files and dirs
+alias ls='exa -l --color=always --group-directories-first'  		# long format
+alias lt='exa -aT --color=always --group-directories-first' 		# tree listing
 alias l.='exa -a | egrep "^\."'
 
 # Colorize grep output (good for log files)
@@ -144,15 +144,16 @@ alias fgrep='fgrep --color=auto'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i -rf'
+alias cp="rsync -ah --inplace --no-whole-file --info=progress2" 	# Change cp with rsync
 
 # adding flags
-alias df='df -h'                          		# human-readable sizes
-alias free='free -m'                      		# show sizes in MB
-alias cat='bat --theme Dracula --italic-text always'    # run cat -> bat with arguments
-alias vim='nvim' 					# rum neovim as vim
-alias ping='prettyping' 				# making ping beautiful
-alias cmatrix='cxxmatrix' 				# advance cmatrix
-alias srn='shutdown -r now' 				# reboot 
+alias df='df -h'                          				# human-readable sizes
+alias free='free -m'                      				# show sizes in MB
+alias cat='bat --theme Dracula --italic-text always'    		# run cat -> bat with arguments
+alias vim='nvim' 							# rum neovim as vim
+alias ping='prettyping' 						# making ping beautiful
+alias cmatrix='cxxmatrix' 						# advance cmatrix
+alias srn='shutdown -r now' 						# reboot 
 
 # quote
 ### BASH INSULTER ###

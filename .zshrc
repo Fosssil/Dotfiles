@@ -143,8 +143,8 @@ alias fgrep='fgrep --color=auto'
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
-alias rm='rm -i -rf'
-alias cp="rsync -ah --inplace --no-whole-file --info=progress2" 	# Change cp with rsync
+alias rm='rm -if'
+alias cp="rsync -avh --inplace --no-whole-file --info=progress2" 	# Change cp with rsync
 
 # adding flags
 alias df='df -h'                          				# human-readable sizes

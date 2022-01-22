@@ -140,14 +140,12 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# confirm before overwriting something
-alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -if'
 alias cp="rsync -avh --inplace --no-whole-file --info=progress2" 	# Change cp with rsync
 
 # adding flags
-alias df='df -h'                          				# human-readable sizes
+alias df='df -Th'                          				# human-readable sizes
 alias free='free -m'                      				# show sizes in MB
 alias cat='bat --theme Dracula --italic-text always'    		# run cat -> bat with arguments
 alias vim='nvim' 							# rum neovim as vim

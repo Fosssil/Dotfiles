@@ -1,21 +1,14 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/dahiya/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="bira"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -30,14 +23,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
- export UPDATE_ZSH_DAYS=7
+ zstyle ':omz:update' frequency 7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -49,9 +41,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
  COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -65,7 +60,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
- HIST_STAMPS="mm/dd/yyyy"
+# HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -73,18 +68,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# Example format: plugins=(rails git textmate ruby lhighhighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-        zsh-interactive-cd
-	fzf
-	colored-man-pages
-	colorize
-	command-not-found
-	zsh-syntax-highlighting
-	zsh-autosuggestions
-#	rand-quote
-)
+	 fzf
+	 colored-man-pages
+	 colorize
+	 zsh-syntax-highlighting
+	)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,26 +104,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-######colorscript######
-#colorscript random
-
-# Text correction
-setopt correct
-export SPROMPT="Correct %R to %r? [Yes, No, Edit]"
-# autoload U colors && colors
-
-#### Aliases
+#
+# #### Aliases
 alias unlock="sudo rm /var/lib/pacman/db.lck"    					# remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' 					# remove orphaned packages
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' 				# update grub shorthand
 alias p10kup='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull'  # to update powerlevel10k
 
 # Changing "ls" to "exa"
-alias ll='exa -al --color=always --group-directories-first' 		# my preferred listing
-alias la='exa -a --color=always --group-directories-first'  		# all files and dirs
-alias ls='exa -l --color=always --group-directories-first'  		# long format
-alias lt='exa -aT --color=always --group-directories-first' 		# tree listing
+alias ll='exa -al --color=always --icons -F' 		# my preferred listing
+alias la='exa -a --color=always --icons -F'  		# all files and dirs
+alias ls='exa -l --color=always --icons -F'  		# long format
+alias lt='exa -aT --color=always --icons -F' 		# tree listing
 alias l.='exa -a | egrep "^\."'
 
 # Colorize grep output (good for log files)
@@ -151,15 +134,4 @@ alias cat='bat --theme Dracula --italic-text always'    		# run cat -> bat with 
 alias vim='nvim' 							# rum neovim as vim
 alias ping='prettyping' 						# making ping beautiful
 alias cmatrix='cxxmatrix' 						# advance cmatrix
-alias srn='shutdown -r now' 						# reboot 
-
-# quote
-### BASH INSULTER ###
-#if [ -f /etc/bash.command-not-found ]; then
-#    . /etc/bash.command-not-found
-#fi
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+alias srn='shutdown -r now' 						# reboot
